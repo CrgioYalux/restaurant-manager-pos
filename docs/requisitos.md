@@ -1,0 +1,38 @@
+### Requisitos Brutos del Cliente
+- Pensado para ser usado desde una pantalla táctil al estilo [software de punto de venta](https://duckduckgo.com/?q=POS+software+interface&t=lm&iar=images&iax=images&ia=images). 
+- El funcionalidades del software podrían variar segun el rol del usuario que lo esté utilizando.
+- CRUD para registros: 
+    - Menu.
+    - Inventario.
+    - Mesas.
+    - Empleados.
+        - Contar con distinos roles.
+    - Proveedores.
+        - Contar con la información de qué items del inventario provee un proveedor en particular,
+        y su información de contacto.
+- El control de mesas es la funcionalidad principal del sistema, consistiendo de las capacidades:
+    - Clasificación de mesas.
+        - Existen distintos tipos de mesas. Por ejemplo:
+            - Salón.
+            - Afuera.
+            - Barra.
+            - etc.
+        - Por lo tanto es necesario poder distinguir entre tipos.
+    - Apertura y cerrado de cajas.
+    - Administración e historial de los movimientos de una mesa.
+        - Estados de una mesa. Por ejemplo:
+            - Sin atender.
+            - Abierta.
+            - Esperando pedido.
+            - etc.
+        - Metadata de una mesa. Por ejemplo:
+            - Qué empleado la atendió?.
+            - Monto de la mesa.
+            - Medio de pago.
+            - Cuándo hubo un cambio de estado.
+            - etc.
+    - Consumo de todas las funcionalidades relacionadas a Mesas mediante una representación gráfica.
+        - Poder modificar la disposición de las mesas para adecuarse a escenarios de la vida real.
+        - Poder modificar la capacidad de una mesa.
+        - Crear perfiles de disposición.
+        - Poder inspeccionar la información de una mesa desde la representación gráfica.

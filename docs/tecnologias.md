@@ -1,0 +1,24 @@
+### Tecnologías
+- Frontend:
+    - Javascript
+    - Librería de Componentes Propia
+    - [React](https://react.dev/)
+    - [TailwindCSS](https://react.dev/)
+    - [axios](https://www.npmjs.com/package/axios)
+    - [js-cookie](https://www.npmjs.com/package/js-cookie)
+    - [crypto-js](https://www.npmjs.com/package/crypto-js)
+- Backend:
+    - [Node.js](https://nodejs.org/en)
+    - [MySQL](https://www.mysql.com/)
+    - [express](https://www.npmjs.com/package/express)
+    - [bcrypt](https://www.npmjs.com/package/bcrypt)
+    - [cors](https://www.npmjs.com/package/cors)
+    - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+    - [mysql](https://www.npmjs.com/package/mysql)
+    - [nodemon](https://www.npmjs.com/package/nodemon)
+- Monorepo:
+    - [Yarn](https://yarnpkg.com/)
+    - [Vite](https://vitejs.dev/)
+    - [npm-run-all](https://www.npmjs.com/package/npm-run-all)
+    - [cross-env](https://www.npmjs.com/package/npm-run-all)
+
