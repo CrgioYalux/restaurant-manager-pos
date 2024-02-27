@@ -1,0 +1,29 @@
+{
+  "name": "restaurant-manager-pos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/CrgioYalux/restaurant-manager-pos",
+  "author": "Sergio Yalux <randaledomman1@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:frontend": "yarn --cwd frontend dev --host",
+    "dev:backend": "yarn --cwd backend dev",
+    "dev:both": "npm-run-all --parallel dev:frontend dev:backend",
+    "build:frontend": "yarn --cwd frontend build",
+    "build:backend": "yarn --cwd backend build",
+    "build:both": "npm-run-all build:frontend build:backend",
+    "start:backend": "yarn --cwd backend start",
+    "start": "npm-run-all build:both start:server"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
