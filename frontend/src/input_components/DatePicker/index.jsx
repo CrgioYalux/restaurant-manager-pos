@@ -58,17 +58,17 @@ const DatePicker = ({
 				{label}
 			</span>
 			<input 
+				{...inputProps}
 				className={inputClassName}
 				type='date'
+				id={id}
 				value={!date ? '' : (new Date(date)).toJSON().substring(0, 10)}
 				onChange={(event) => {
-                    if (!event.target['validity'].valid) return
+					if (!event.target['validity'].valid) return
 					const attemptedDate = event.target['value']
 					setDate(attemptedDate)
 					if (inputProps.onChange) inputProps.onChange(event)
 				}}
-				id={id}
-				{...inputProps}
 			/>
 			    {setToCurrentButton ? (
 				<button 

@@ -58,6 +58,7 @@ const DateTimePicker = ({
 				{label}
 			</span>
 			<input 
+				{...inputProps}
 				className={inputClassName}
 				type='datetime-local'
 				id={id}
@@ -72,7 +73,6 @@ const DateTimePicker = ({
                     setDateTime(attemptedDateTime)
                     if (inputProps.onChange) inputProps.onChange(event)
                 }}
-				{...inputProps}
 			/>
             {setToCurrentButton ? (
                 <button 
