@@ -1,4 +1,5 @@
 import { useId } from 'react'
+import { getCurrentDateTimeToJSON } from '../../utils'
 
 const colorsByVariant = {
 	initial: {
@@ -48,7 +49,7 @@ const DateTimePicker = ({
 	const buttonClassName = classNames.overwriteButton ?? `${defaultClassNames(variant)?.button} ${classNames.button ?? ''}`
 
     const setDateTimeToCurrent = () => {
-        setDateTime(() => new Date())
+        setDateTime(() => getCurrentDateTimeToJSON())
     }
 
 	return (
@@ -67,7 +68,7 @@ const DateTimePicker = ({
                 }
                 onChange={(event) => {
                     if (!event.target['validity'].valid) return
-                    const attemptedDateTime = event.target['value'] + ':00Z'
+                    const attemptedDateTime = event.target['value'] + ':00.000Z'
                     setDateTime(attemptedDateTime)
                     if (inputProps.onChange) inputProps.onChange(event)
                 }}
@@ -79,7 +80,6 @@ const DateTimePicker = ({
                 onClick={setDateTimeToCurrent}
                 >{setToCurrentButtonText}</button>
             ) : ''}
-
 		</label>
 	)
 }
