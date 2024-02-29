@@ -1,9 +1,15 @@
 import DatePicker from "./input_components/DatePicker"
+import DateTimePicker from "./input_components/DateTimePicker"
 import PasswordInput from "./input_components/PasswordInput"
+import TimePicker from "./input_components/TimePicker"
 import { useTheme } from "./providers/Theme"
+import { useState } from 'react'
 
 const App = () => {
     const [state, switchTheme] = useTheme()
+    const [dateTime, setDatetime] = useState()
+    const [date, setDate] = useState()
+    const [time, setTime] = useState()
 
     return (
         <div className='min-h-screen dark:bg-gray-900 flex flex-col items-center justify-center'>
@@ -14,12 +20,18 @@ const App = () => {
                 <h3 className='text-xl text-black dark:text-white'>An example form</h3>
                 <PasswordInput label='Enter your password:' />
                 <DatePicker 
+                date={date}
+                setDate={setDate}
                 label='Choose your birthdate:'
                 variant='warning'
                 classNames={{
                     overwriteLabel: 'flex gap-10 items-center border-2 p-2 rounded-xl cursor-pointer' 
                 }} />
+                <DateTimePicker label="Some datetime:" setDateTime={setDatetime} dateTime={dateTime} setToCurrentButton={true} />
                 <button onClick={switchTheme} className='text-black dark:text-white'>Go {state.opposite}</button>
+                <TimePicker time={time} setTime={setTime} includeSeconds />
+                <TimePicker variant='error' time={time} setTime={setTime} />
+                <TimePicker variant='success' label='some time' />       
             </div>
         </div>
     )
