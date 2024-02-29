@@ -18,6 +18,21 @@ function getCurrentDateTimeToJSON() {
     return result
 }
 
+function getCurrentDateToJSON() {
+    const current = new Date(Date.now())
+    const year = current.getFullYear()
+    const month = current.getMonth() + 1
+    const day = current.getDate()
+
+    const formattedMonth = month < 10 ? `0${month}` : `${day}`
+    const formattedDay = day < 10 ? `0${day}` : `${day}`
+
+    const result = `${year}-${formattedMonth}-${formattedDay}`
+
+    return result
+}
+
 export {
     getCurrentDateTimeToJSON,
+    getCurrentDateToJSON,
 }
