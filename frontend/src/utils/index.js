@@ -32,7 +32,25 @@ function getCurrentDateToJSON() {
     return result
 }
 
+function getCurrentTimeToJSON(includeSeconds = true) {
+    const current = new Date(Date.now())
+    const hours = current.getHours()
+    const minutes = current.getMinutes()
+    const seconds = current.getSeconds()
+
+    const formattedHours = hours < 10 ? `0${hours}` : `${hours}`
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`
+
+    const result = includeSeconds 
+        ? `${formattedHours}:${formattedMinutes}:${formattedSeconds}`
+        : `${formattedHours}:${formattedMinutes}`
+
+    return result
+}
+
 export {
     getCurrentDateTimeToJSON,
     getCurrentDateToJSON,
+    getCurrentTimeToJSON,
 }
