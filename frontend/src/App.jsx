@@ -1,6 +1,7 @@
 import DatePicker from "./input_components/DatePicker"
 import DateTimePicker from "./input_components/DateTimePicker"
 import PasswordInput from "./input_components/PasswordInput"
+import TextInput from "./input_components/TextInput"
 import TimePicker from "./input_components/TimePicker"
 import { useTheme } from "./providers/Theme"
 import { useState } from 'react'
@@ -10,6 +11,7 @@ const App = () => {
     const [dateTime, setDatetime] = useState()
     const [date, setDate] = useState()
     const [time, setTime] = useState()
+    const [text, setText] = useState()
 
     return (
         <div className='min-h-screen dark:bg-gray-900 flex flex-col items-center justify-center'>
@@ -32,6 +34,25 @@ const App = () => {
                 <TimePicker time={time} setTime={setTime} includeSeconds />
                 <TimePicker variant='error' time={time} setTime={setTime} />
                 <TimePicker variant='success' label='some time' />       
+                <TextInput 
+                text={text}
+                setText={setText}
+                onlyAllow={/^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/igm}
+                placeholder='e.g. john_lock30'
+                label={'An instagram-like username:'}
+                />
+                <TextInput 
+                text={text}
+                setText={setText}
+                allowSymbols={false}
+                allowLetters={false}
+                allowNumbers={false}
+                allowSpaces
+                allow={'-.'}
+                placeholder='e.g. ... --- ...'
+                variant='warning'
+                label='Some morse code:'
+                />
             </div>
         </div>
     )
