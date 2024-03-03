@@ -3,6 +3,7 @@ import DateTimePicker from "./input_components/DateTimePicker"
 import PasswordInput from "./input_components/PasswordInput"
 import TextInput from "./input_components/TextInput"
 import TimePicker from "./input_components/TimePicker"
+import Textarea from "./input_components/Textarea"
 import { useTheme } from "./providers/Theme"
 import { useState } from 'react'
 
@@ -12,6 +13,7 @@ const App = () => {
     const [date, setDate] = useState()
     const [time, setTime] = useState()
     const [text, setText] = useState()
+    const [textarea, setTextarea] = useState()
 
     return (
         <div className='min-h-screen dark:bg-gray-900 flex flex-col items-center justify-center'>
@@ -52,6 +54,21 @@ const App = () => {
                 placeholder='e.g. ... --- ...'
                 variant='warning'
                 label='Some morse code:'
+                />
+                <Textarea 
+                label='Express a feeling:'
+                text={textarea} 
+                setText={setTextarea}
+                onlyLetters
+                allowSpaces
+                classNames={{ input: 'transition' }}
+                variant={
+                    textarea?.length === 0
+                    ? 'error'
+                    : textarea?.length === 10 
+                      ? 'success' : 'warning'
+                }
+                maxLength={10}
                 />
             </div>
         </div>
