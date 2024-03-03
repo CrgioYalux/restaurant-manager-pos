@@ -4,6 +4,7 @@ import PasswordInput from "./input_components/PasswordInput"
 import TextInput from "./input_components/TextInput"
 import TimePicker from "./input_components/TimePicker"
 import Textarea from "./input_components/Textarea"
+import CurrencyInput from "./input_components/CurrencyInput"
 import { useTheme } from "./providers/Theme"
 import { useState } from 'react'
 
@@ -14,6 +15,7 @@ const App = () => {
     const [time, setTime] = useState()
     const [text, setText] = useState()
     const [textarea, setTextarea] = useState()
+    const [dollars, setDollars] = useState()
 
     return (
         <div className='min-h-screen dark:bg-gray-900 flex flex-col items-center justify-center'>
@@ -70,6 +72,7 @@ const App = () => {
                 }
                 maxLength={10}
                 />
+                <CurrencyInput text={dollars} setText={setDollars} />
             </div>
         </div>
     )
