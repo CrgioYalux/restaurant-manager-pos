@@ -37,6 +37,28 @@ $ yarn run dev:both
 Más en el archivo `package.json'.
 
 ### TODO General
-- [ ] Plantear un plano a seguir para la creación de componentes.
-- [ ] Encontrar un color de marca.
-    - [ ] Extender la configuración de Tailwind para agregar `bg-brand-x00` y `text-brand-x00`.
+- [ ] Componentes
+    - [ ] Para ingreso de información 
+        - [x] TextInput
+        - [x] PasswordInput
+        - [x] CurrencyInput
+        - [x] Textarea
+        - [x] DateTimePicker
+        - [x] DatePicker
+        - [x] TimePicker
+        - [ ] DragAndDropFileBox
+        - [ ] RadioInputList
+        - [ ] CheckboxInputList
+    - [ ] Para interacción
+        - [ ] Button
+        - [ ] SwitchButton
+        - [ ] Dimmer / Intensity Regulator (?)
+    - [ ] Para presentación de información
+        - [ ] (Notification / Toast) Card
+        - [ ] Product Card
+        - [ ] Contact Card
+        - [ ] ToolTip
+        - [ ] Keybinding / KeyboardAction (?)
+- [ ] Utilidades
+    - [ ] Notification Toaster
+    - [ ] Keybindings (?)
