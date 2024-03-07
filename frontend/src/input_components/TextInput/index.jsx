@@ -77,9 +77,9 @@ const TextInput = ({
 
                     if (value === '') setText('')
 
-                    const isIncludedInOnlyAllow = isIncludedIn(onlyAllow)
-                    
                     if (typeof onlyAllow === 'string') {
+						const isIncludedInOnlyAllow = isIncludedIn(onlyAllow)
+
                         if (
                             Array
                             .from(value)
@@ -89,26 +89,30 @@ const TextInput = ({
                         ) setText(value)
                         return
                     }
-                    else if (typeof onlyAllow === 'object') {
-                        if (
-                            (onlyAllow.exec(value) ?? [])
-                            .pop() === value
-                        ) setText(value)
+                    else if (
+						typeof onlyAllow === 'object' &&
+						(onlyAllow?.exec(value) ?? [])
+						.pop() === value
+					) {
+                        setText(value)
                         return
                     }
 
                     const whitelist = []
+
                     allowLetters && whitelist.push(...letters)
                     allowNumbers && whitelist.push(...numbers)
                     allowSymbols && whitelist.push(...symbols)
                     allowSpaces && whitelist.push(...spaces)
-                    !!allow && whitelist.push(...allow)
+
+					if (typeof allow === 'string' && !!allow)
+						whitelist.push(...allow)
 
                     const isIncludedInWhitelist = isIncludedIn(whitelist)
 
                     if (
                         (typeof allow === 'object' &&
-                        (onlyAllow.exec(value) ?? [])
+                        (allow?.exec(value) ?? [])
                         .pop() === value)
                         ||
                         Array
@@ -117,7 +121,6 @@ const TextInput = ({
                         .filter(Boolean)
                         .length === value.length
                     ) setText(value)
-                    return
                 }}
 			/>
 		</label>
