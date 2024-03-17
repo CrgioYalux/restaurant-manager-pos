@@ -50,8 +50,9 @@ Más en el archivo `package.json'.
         - [ ] RadioInputList
         - [ ] CheckboxInputList
     - [ ] Para interacción
-        - [ ] Button
-        - [ ] SwitchButton
+        - [x] Button
+        - [x] Switcher
+        - [x] ThemeSwitchButton
         - [ ] Dimmer / Intensity Regulator (?)
     - [ ] Para presentación de información
         - [ ] (Notification / Toast) Card
