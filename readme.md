@@ -1,3 +1,5 @@
+# [CERRADO]
+
 ### Contenido
 - [Monorepo](#monorepo)
 - [Requisitos de Desarrollo](#requisitos-de-desarrollo)
